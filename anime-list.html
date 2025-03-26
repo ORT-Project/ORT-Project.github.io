@@ -1,376 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AniCommunity - My Anime List</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>AniCommunauté - Ma Liste d'Animés</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/anime-list.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>Ani<span>Community</span></h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="anime-list.html" class="active">My List</a></li>
-                <li><a href="rankings.html">Rankings</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="shop.html">Shop</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <button class="btn btn-secondary">Sign In</button>
-                <button class="btn btn-primary">Sign Up</button>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <div id="navbar"></div>
+        <script>
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('navbar').innerHTML = data);
+        </script>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
 
-    <main>
-        <section class="list-header">
-            <h1>My Anime List</h1>
-            <div class="list-actions">
-                <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Anime</button>
-                <div class="search-container">
-                    <input type="text" placeholder="Search your list...">
-                    <button class="search-btn"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="filter-container">
-                    <select>
-                        <option value="all">All Categories</option>
-                        <option value="watching">Currently Watching</option>
-                        <option value="completed">Completed</option>
-                        <option value="on-hold">On Hold</option>
-                        <option value="dropped">Dropped</option>
-                        <option value="plan">Plan to Watch</option>
-                    </select>
-                </div>
+<main>
+    <section class="list-header">
+        <h1>Ma Liste d'Animés</h1>
+        <div class="list-actions">
+            <button class="btn btn-primary"><i class="fas fa-plus"></i> Ajouter un Animé</button>
+            <div class="search-container">
+                <input type="text" placeholder="Rechercher dans votre liste...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
-        </section>
-
-        <section class="list-stats">
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-tv"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>127</h3>
-                    <p>Total Anime</p>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>89</h3>
-                    <p>Completed</p>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-play"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>12</h3>
-                    <p>Watching</p>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>26</h3>
-                    <p>Plan to Watch</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="anime-list">
-            <div class="list-table">
-                <div class="list-header-row">
-                    <div class="list-cell image-cell">Image</div>
-                    <div class="list-cell title-cell">Title</div>
-                    <div class="list-cell score-cell">Score</div>
-                    <div class="list-cell progress-cell">Progress</div>
-                    <div class="list-cell type-cell">Type</div>
-                    <div class="list-cell status-cell">Status</div>
-                    <div class="list-cell actions-cell">Actions</div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-cell image-cell">
-                        <img src="images/anime1.png" alt="Demon Slayer">
-                    </div>
-                    <div class="list-cell title-cell">
-                        <h3>Demon Slayer</h3>
-                        <p>Action, Fantasy</p>
-                    </div>
-                    <div class="list-cell score-cell">
-                        <div class="rating-input">
-                            <select>
-                                <option value="10">10</option>
-                                <option value="9">9</option>
-                                <option value="8">8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5" selected>5</option>
-                                <option value="4">4</option>
-                                <option value="3">3</option>
-                                <option value="2">2</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="list-cell progress-cell">
-                        <input type="text" value="26" class="episode-input"> / 26
-                    </div>
-                    <div class="list-cell type-cell">TV</div>
-                    <div class="list-cell status-cell">
-                        <span class="status-badge completed">Completed</span>
-                    </div>
-                    <div class="list-cell actions-cell">
-                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-cell image-cell">
-                        <img src="images/anime2.png" alt="Jujutsu Kaisen">
-                    </div>
-                    <div class="list-cell title-cell">
-                        <h3>Jujutsu Kaisen</h3>
-                        <p>Action, Supernatural</p>
-                    </div>
-                    <div class="list-cell score-cell">
-                        <div class="rating-input">
-                            <select>
-                                <option value="10">10</option>
-                                <option value="9" selected>9</option>
-                                <option value="8">8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5">5</option>
-                                <option value="4">4</option>
-                                <option value="3">3</option>
-                                <option value="2">2</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="list-cell progress-cell">
-                        <input type="text" value="18" class="episode-input"> / 24
-                    </div>
-                    <div class="list-cell type-cell">TV</div>
-                    <div class="list-cell status-cell">
-                        <span class="status-badge watching">Watching</span>
-                    </div>
-                    <div class="list-cell actions-cell">
-                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-cell image-cell">
-                        <img src="images/anime3.png" alt="Attack on Titan">
-                    </div>
-                    <div class="list-cell title-cell">
-                        <h3>Attack on Titan</h3>
-                        <p>Action, Drama</p>
-                    </div>
-                    <div class="list-cell score-cell">
-                        <div class="rating-input">
-                            <select>
-                                <option value="10" selected>10</option>
-                                <option value="9">9</option>
-                                <option value="8">8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5">5</option>
-                                <option value="4">4</option>
-                                <option value="3">3</option>
-                                <option value="2">2</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="list-cell progress-cell">
-                        <input type="text" value="75" class="episode-input"> / 75
-                    </div>
-                    <div class="list-cell type-cell">TV</div>
-                    <div class="list-cell status-cell">
-                        <span class="status-badge completed">Completed</span>
-                    </div>
-                    <div class="list-cell actions-cell">
-                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-cell image-cell">
-                        <img src="images/anime4.png" alt="My Hero Academia">
-                    </div>
-                    <div class="list-cell title-cell">
-                        <h3>My Hero Academia</h3>
-                        <p>Action, Superhero</p>
-                    </div>
-                    <div class="list-cell score-cell">
-                        <div class="rating-input">
-                            <select>
-                                <option value="10">10</option>
-                                <option value="9">9</option>
-                                <option value="8" selected>8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5">5</option>
-                                <option value="4">4</option>
-                                <option value="3">3</option>
-                                <option value="2">2</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="list-cell progress-cell">
-                        <input type="text" value="0" class="episode-input"> / 25
-                    </div>
-                    <div class="list-cell type-cell">TV</div>
-                    <div class="list-cell status-cell">
-                        <span class="status-badge plan">Plan to Watch</span>
-                    </div>
-                    <div class="list-cell actions-cell">
-                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-cell image-cell">
-                        <img src="images/anime5.png" alt="One Piece">
-                    </div>
-                    <div class="list-cell title-cell">
-                        <h3>One Piece</h3>
-                        <p>Adventure, Fantasy</p>
-                    </div>
-                    <div class="list-cell score-cell">
-                        <div class="rating-input">
-                            <select>
-                                <option value="10">10</option>
-                                <option value="9" selected>9</option>
-                                <option value="8">8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5">5</option>
-                                <option value="4">4</option>
-                                <option value="3">3</option>
-                                <option value="2">2</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="list-cell progress-cell">
-                        <input type="text" value="1080" class="episode-input"> / 1100+
-                    </div>
-                    <div class="list-cell type-cell">TV</div>
-                    <div class="list-cell status-cell">
-                        <span class="status-badge watching">Watching</span>
-                    </div>
-                    <div class="list-cell actions-cell">
-                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pagination">
-                <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
-                <button class="pagination-btn active">1</button>
-                <button class="pagination-btn">2</button>
-                <button class="pagination-btn">3</button>
-                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <section class="import-export">
-            <h2 class="section-title">Import/Export Your List</h2>
-            <div class="import-export-options">
-                <div class="option-card">
-                    <div class="option-icon">
-                        <i class="fas fa-file-import"></i>
-                    </div>
-                    <h3>Import List</h3>
-                    <p>Import your anime list from other platforms</p>
-                    <button class="btn btn-secondary">Import</button>
-                </div>
-                <div class="option-card">
-                    <div class="option-icon">
-                        <i class="fas fa-file-export"></i>
-                    </div>
-                    <h3>Export List</h3>
-                    <p>Export your anime list to CSV or JSON</p>
-                    <button class="btn btn-secondary">Export</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <h2>Ani<span>Community</span></h2>
-                <p>Your ultimate anime community platform</p>
-            </div>
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="anime-list.html">My List</a></li>
-                        <li><a href="rankings.html">Rankings</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Connect</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-reddit"></i></a>
-                    </div>
-                </div>
+            <div class="filter-container">
+                <select>
+                    <option value="all">Toutes les Catégories</option>
+                    <option value="watching">En Cours de Visionnage</option>
+                    <option value="completed">Terminé</option>
+                    <option value="on-hold">En Pause</option>
+                    <option value="dropped">Abandonné</option>
+                    <option value="plan">À Regarder</option>
+                </select>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 AniCommunity. All rights reserved.</p>
+    </section>
+
+    <section class="list-stats">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-tv"></i>
+            </div>
+            <div class="stat-info">
+                <h3>127</h3>
+                <p>Total des Animés</p>
+            </div>
         </div>
-    </footer>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <div class="stat-info">
+                <h3>89</h3>
+                <p>Terminés</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="stat-info">
+                <h3>12</h3>
+                <p>En Cours</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div class="stat-info">
+                <h3>26</h3>
+                <p>À Regarder</p>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        // Simple toggle for mobile menu
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-    </script>
-</body>
-</html>
+    <section class="anime-list">
+        <div class="list-table">
+            <div class="list-header-row">
+                <div class="list-cell image-cell">Image</div>
+                <div class="list-cell title-cell">Titre</div>
+                <div class="list-cell score-cell">Note</div>
+                <div class="list-cell progress-cell">Progrès</div>
+                <div class="list-cell type-cell">Type</div>
+                <div class="list-cell status-cell">Statut</div>
+                <div class="list-cell actions-cell">Actions</div>
+            </div>
 
+            <div class="list-row">
+                <div class="list-cell image-cell">
+                    <img src="images/anime1.png" alt="Demon Slayer">
+                </div>
+                <div class="list-cell title-cell">
+                    <h3>Demon Slayer</h3>
+                    <p>Action, Fantaisie</p>
+                </div>
+                <div class="list-cell score-cell">
+                    <div class="rating-input">
+                        <select>
+                            <option value="10">10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5" selected>5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="list-cell progress-cell">
+                    <input type="text" value="26" class="episode-input"> / 26
+                </div>
+                <div class="list-cell type-cell">TV</div>
+                <div class="list-cell status-cell">
+                    <span class="status-badge completed">Terminé</span>
+                </div>
+                <div class="list-cell actions-cell">
+                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                    <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="list-row">
+                <div class="list-cell image-cell">
+                    <img src="images/anime2.png" alt="Jujutsu Kaisen">
+                </div>
+                <div class="list-cell title-cell">
+                    <h3>Jujutsu Kaisen</h3>
+                    <p>Action, Surnaturel</p>
+                </div>
+                <div class="list-cell score-cell">
+                    <div class="rating-input">
+                        <select>
+                            <option value="10">10</option>
+                            <option value="9" selected>9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="list-cell progress-cell">
+                    <input type="text" value="18" class="episode-input"> / 24

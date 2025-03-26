@@ -1,242 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AniCommunity - Profile</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>AniCommunauté - Profil</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>Ani<span>Community</span></h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="anime-list.html">My List</a></li>
-                <li><a href="rankings.html">Rankings</a></li>
-                <li><a href="profile.html" class="active">Profile</a></li>
-                <li><a href="shop.html">Shop</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <button class="btn btn-secondary">Sign In</button>
-                <button class="btn btn-primary">Sign Up</button>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <div id="navbar"></div>
+        <script>
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('navbar').innerHTML = data);
+        </script>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
 
-    <main>
-        <section class="profile-header">
-            <div class="profile-banner">
-                <img src="images/profile-banner.png" alt="Profile banner">
-                <button class="edit-banner"><i class="fas fa-edit"></i></button>
+<main>
+    <section class="profile-header">
+        <div class="profile-banner">
+            <img src="images/profile-banner.png" alt="Bannière de profil">
+            <button class="edit-banner"><i class="fas fa-edit"></i></button>
+        </div>
+        <div class="profile-info">
+            <div class="profile-avatar">
+                <img src="images/avatar.png" alt="Avatar de l'utilisateur">
+                <button class="edit-avatar"><i class="fas fa-camera"></i></button>
             </div>
-            <div class="profile-info">
-                <div class="profile-avatar">
-                    <img src="images/avatar.png" alt="User avatar">
-                    <button class="edit-avatar"><i class="fas fa-camera"></i></button>
-                </div>
-                <div class="profile-details">
-                    <h1>Sakura Anime</h1>
-                    <p class="username">@sakura_anime</p>
-                    <p class="bio">Anime enthusiast | Manga collector | Always looking for new series to watch</p>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <span class="stat-value">127</span>
-                            <span class="stat-label">Anime Watched</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">85</span>
-                            <span class="stat-label">Manga Read</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">43</span>
-                            <span class="stat-label">Reviews</span>
-                        </div>
+            <div class="profile-details">
+                <h1>Sakura Anime</h1>
+                <p class="username">@sakura_anime</p>
+                <p class="bio">Passionné d'animés | Collectionneur de mangas | Toujours à la recherche de nouvelles séries à regarder</p>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-value">127</span>
+                        <span class="stat-label">Animés Regardés</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">85</span>
+                        <span class="stat-label">Mangas Lus</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">43</span>
+                        <span class="stat-label">Critiques</span>
                     </div>
                 </div>
-                <div class="profile-actions">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i> Edit Profile</button>
-                    <button class="btn btn-secondary"><i class="fas fa-share-alt"></i> Share</button>
-                </div>
             </div>
-        </section>
+            <div class="profile-actions">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i> Modifier le Profil</button>
+                <button class="btn btn-secondary"><i class="fas fa-share-alt"></i> Partager</button>
+            </div>
+        </div>
+    </section>
 
-        <section class="profile-content">
-            <div class="profile-tabs">
-                <button class="tab-btn active" data-tab="favorites">Favorites</button>
-                <button class="tab-btn" data-tab="watching">Currently Watching</button>
-                <button class="tab-btn" data-tab="completed">Completed</button>
-                <button class="tab-btn" data-tab="plan-to-watch">Plan to Watch</button>
-                <button class="tab-btn" data-tab="reviews">Reviews</button>
-            </div>
+    <section class="profile-content">
+        <div class="profile-tabs">
+            <button class="tab-btn active" data-tab="favorites">Favoris</button>
+            <button class="tab-btn" data-tab="watching">En Cours de Visionnage</button>
+            <button class="tab-btn" data-tab="completed">Terminés</button>
+            <button class="tab-btn" data-tab="plan-to-watch">À Regarder</button>
+            <button class="tab-btn" data-tab="reviews">Critiques</button>
+        </div>
 
-            <div class="tab-content active" id="favorites">
-                <h2 class="tab-title">My Favorites</h2>
-                <div class="anime-grid">
-                    <div class="anime-card">
-                        <div class="anime-image">
-                            <img src="images/anime1.png" alt="Anime title">
-                            <div class="user-rating">5.0</div>
-                        </div>
-                        <div class="anime-info">
-                            <h3>Demon Slayer</h3>
-                            <p>Action, Fantasy</p>
-                            <div class="anime-actions">
-                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>
+        <div class="tab-content active" id="favorites">
+            <h2 class="tab-title">Mes Favoris</h2>
+            <div class="anime-grid">
+                <div class="anime-card">
+                    <div class="anime-image">
+                        <img src="images/anime1.png" alt="Titre de l'animé">
+                        <div class="user-rating">5.0</div>
                     </div>
-                    <div class="anime-card">
-                        <div class="anime-image">
-                            <img src="images/anime5.png" alt="Anime title">
-                            <div class="user-rating">5.0</div>
-                        </div>
-                        <div class="anime-info">
-                            <h3>One Piece</h3>
-                            <p>Adventure, Fantasy</p>
-                            <div class="anime-actions">
-                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="anime-card">
-                        <div class="anime-image">
-                            <img src="images/anime6.png" alt="Anime title">
-                            <div class="user-rating">5.0</div>
-                        </div>
-                        <div class="anime-info">
-                            <h3>Fullmetal Alchemist</h3>
-                            <p>Action, Adventure</p>
-                            <div class="anime-actions">
-                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="anime-card">
-                        <div class="anime-image">
-                            <img src="images/anime7.png" alt="Anime title">
-                            <div class="user-rating">4.9</div>
-                        </div>
-                        <div class="anime-info">
-                            <h3>Hunter x Hunter</h3>
-                            <p>Adventure, Fantasy</p>
-                            <div class="anime-actions">
-                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                            </div>
+                    <div class="anime-info">
+                        <h3>Demon Slayer</h3>
+                        <p>Action, Fantaisie</p>
+                        <div class="anime-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="premium-prompt">
-                    <p><i class="fas fa-lock"></i> Upgrade to Premium to display more favorites on your profile</p>
-                    <button class="btn btn-primary">Upgrade Now</button>
+                <div class="anime-card">
+                    <div class="anime-image">
+                        <img src="images/anime5.png" alt="Titre de l'animé">
+                        <div class="user-rating">5.0</div>
+                    </div>
+                    <div class="anime-info">
+                        <h3>One Piece</h3>
+                        <p>Aventure, Fantaisie</p>
+                        <div class="anime-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="anime-card">
+                    <div class="anime-image">
+                        <img src="images/anime6.png" alt="Titre de l'animé">
+                        <div class="user-rating">5.0</div>
+                    </div>
+                    <div class="anime-info">
+                        <h3>Fullmetal Alchemist</h3>
+                        <p>Action, Aventure</p>
+                        <div class="anime-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="anime-card">
+                    <div class="anime-image">
+                        <img src="images/anime7.png" alt="Titre de l'animé">
+                        <div class="user-rating">4.9</div>
+                    </div>
+                    <div class="anime-info">
+                        <h3>Hunter x Hunter</h3>
+                        <p>Aventure, Fantaisie</p>
+                        <div class="anime-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="premium-prompt">
+                <p><i class="fas fa-lock"></i> Passez à Premium pour afficher plus de favoris sur votre profil</p>
+                <button class="btn btn-primary">Passer à Premium</button>
+            </div>
+        </div>
+    </section>
 
-        <section class="customization-preview">
-            <h2 class="section-title">Personalize Your Profile</h2>
-            <div class="customization-options">
-                <div class="customization-card">
-                    <img src="images/theme-preview.png" alt="Theme preview">
-                    <h3>Premium Themes</h3>
-                    <p>Change the look and feel of your profile</p>
-                    <button class="btn btn-secondary">Browse Themes</button>
-                </div>
-                <div class="customization-card">
-                    <img src="images/avatar-preview.png" alt="Avatar preview">
-                    <h3>Animated Avatars</h3>
-                    <p>Stand out with unique animated avatars</p>
-                    <button class="btn btn-secondary">Browse Avatars</button>
-                </div>
-                <div class="customization-card">
-                    <img src="images/banner-preview.png" alt="Banner preview">
-                    <h3>Custom Banners</h3>
-                    <p>Showcase your personality with custom banners</p>
-                    <button class="btn btn-secondary">Browse Banners</button>
-                </div>
+    <section class="customization-preview">
+        <h2 class="section-title">Personnalisez Votre Profil</h2>
+        <div class="customization-options">
+            <div class="customization-card">
+                <img src="images/theme-preview.png" alt="Aperçu du thème">
+                <h3>Thèmes Premium</h3>
+                <p>Changez l'apparence de votre profil</p>
+                <button class="btn btn-secondary">Parcourir les Thèmes</button>
             </div>
-        </section>
-    </main>
+            <div class="customization-card">
+                <img src="images/avatar-preview.png" alt="Aperçu de l'avatar">
+                <h3>Avatars Animés</h3>
+                <p>Distinguez-vous avec des avatars animés uniques</p>
+                <button class="btn btn-secondary">Parcourir les Avatars</button>
+            </div>
+            <div class="customization-card">
+                <img src="images/banner-preview.png" alt="Aperçu de la bannière">
+                <h3>Bannières Personnalisées</h3>
+                <p>Affichez votre personnalité avec des bannières personnalisées</p>
+                <button class="btn btn-secondary">Parcourir les Bannières</button>
+            </div>
+        </div>
+    </section>
+</main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <h2>Ani<span>Community</span></h2>
-                <p>Your ultimate anime community platform</p>
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h2>Ani<span>Communauté</span></h2>
+            <p>Votre plateforme communautaire ultime pour les animés</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="anime-list.html">Ma Liste</a></li>
+                    <li><a href="rankings.html">Classements</a></li>
+                    <li><a href="profile.html">Profil</a></li>
+                    <li><a href="shop.html">Boutique</a></li>
+                </ul>
             </div>
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="anime-list.html">My List</a></li>
-                        <li><a href="rankings.html">Rankings</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Connect</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-reddit"></i></a>
-                    </div>
+            <div class="footer-column">
+                <h3>Légal</h3>
+                <ul>
+                    <li><a href="#">Conditions d'Utilisation</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                    <li><a href="#">Politique de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connexion</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-reddit"></i></a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 AniCommunity. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 AniCommunauté. Tous droits réservés.</p>
+    </div>
+</footer>
 
-    <script>
-        // Simple toggle for mobile menu
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            this.classList.toggle('active');
+<script>
+    // Simple bascule pour le menu mobile
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+        this.classList.toggle('active');
+    });
+
+    // Fonctionnalité de changement d'onglets
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Supprime la classe active de tous les boutons et contenus
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            // Ajoute la classe active au bouton cliqué
+            btn.classList.add('active');
+
+            // Affiche le contenu correspondant
+            const tabId = btn.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
         });
-
-        // Tab switching functionality
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Show corresponding content
-                const tabId = btn.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
-

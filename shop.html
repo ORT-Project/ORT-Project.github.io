@@ -4,26 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AniCommunity - Shop</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/shop.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>Ani<span>Community</span></h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="anime-list.html">My List</a></li>
-                <li><a href="rankings.html">Rankings</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="shop.html" class="active">Shop</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <button class="btn btn-secondary">Sign In</button>
-                <button class="btn btn-primary">Sign Up</button>
-            </div>
+        <div id="navbar"></div>
+        <script>
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('navbar').innerHTML = data);
+        </script>
+
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -34,15 +27,15 @@
 
     <main>
         <section class="shop-header">
-            <h1>Customize Your Experience</h1>
-            <p>Enhance your profile with premium items and stand out in the community</p>
+            <h1>Customisez votre Expérience</h1>
+            <p>Améliorez votre profile avec des items premium</p>
         </section>
 
         <section class="shop-categories">
             <div class="category-tabs">
-                <button class="tab-btn active" data-tab="all">All Items</button>
+                <button class="tab-btn active" data-tab="all">Tous les items</button>
                 <button class="tab-btn" data-tab="avatars">Avatars</button>
-                <button class="tab-btn" data-tab="banners">Banners</button>
+                <button class="tab-btn" data-tab="banners">Bannières</button>
                 <button class="tab-btn" data-tab="themes">Themes</button>
                 <button class="tab-btn" data-tab="badges">Badges</button>
             </div>
@@ -53,13 +46,13 @@
                 <div class="shop-item">
                     <div class="item-image">
                         <img src="images/avatar1.png" alt="Animated Avatar">
-                        <div class="item-tag">Popular</div>
+                        <div class="item-tag">Populaire</div>
                     </div>
                     <div class="item-info">
                         <h3>Animated Ninja Avatar</h3>
-                        <p>Stand out with this animated ninja-themed avatar</p>
+                        <p>Démarquez-vous avec cet avatar animé sur le thème du ninja</p>
                         <div class="item-price">500 Points</div>
-                        <button class="btn btn-primary">Purchase</button>
+                        <button class="btn btn-primary">Acheter</button>
                     </div>
                 </div>
 
@@ -70,9 +63,9 @@
                     </div>
                     <div class="item-info">
                         <h3>Magical Girl Avatar</h3>
-                        <p>Sparkle and shine with this magical girl avatar</p>
+                        <p>Brillez et scintillez avec cet avatar de fille magique</p>
                         <div class="item-price">450 Points</div>
-                        <button class="btn btn-primary">Purchase</button>
+                        <button class="btn btn-primary">Acheter</button>
                     </div>
                 </div>
 
@@ -82,9 +75,9 @@
                     </div>
                     <div class="item-info">
                         <h3>Sakura Blossom Banner</h3>
-                        <p>Beautiful animated cherry blossoms for your profile</p>
+                        <p>De belles fleurs de cerisier animées pour votre profil</p>
                         <div class="item-price">800 Points</div>
-                        <button class="btn btn-primary">Purchase</button>
+                        <button class="btn btn-primary">Acheter</button>
                     </div>
                 </div>
 
@@ -95,9 +88,9 @@
                     </div>
                     <div class="item-info">
                         <h3>Cyberpunk City Banner</h3>
-                        <p>Futuristic animated cityscape for your profile</p>
+                        <p>Paysage urbain animé futuriste pour votre profil</p>
                         <div class="item-price">1000 Points</div>
-                        <button class="btn btn-primary">Purchase</button>
+                        <button class="btn btn-primary">Acheter</button>
                     </div>
                 </div>
 
@@ -107,9 +100,9 @@
                     </div>
                     <div class="item-info">
                         <h3>Dark Mode Theme</h3>
-                        <p>Sleek dark theme for your profile page</p>
+                        <p>Thème sombre et élégant pour votre page de profil</p>
                         <div class="item-price">600 Points</div>
-                        <button class="btn btn-primary">Purchase</button>
+                        <button class="btn btn-primary">Acheter</button>
                     </div>
                 </div>
 
@@ -119,9 +112,9 @@
                     </div>
                     <div class="item-info">
                         <h3>Pastel Anime Theme</h3>
-                        <p>Soft pastel colors with anime-inspired design</p>
+                        <p>Couleurs pastel douces avec un design inspiré des dessins animés</p>
                         <div class="item-price">650 Points</div>
-                        <button class="btn btn-primary">Purchase</button>
+                        <button class="btn btn-primary">Acheter</button>
                     </div>
                 </div>
 
@@ -132,9 +125,9 @@
                     </div>
                     <div class="item-info">
                         <h3>Anime Connoisseur Badge</h3>
-                        <p>Show off your anime expertise with this badge</p>
+                        <p>Montrez votre expertise en anime avec ce badge</p>
                         <div class="item-price">300 Points</div>
-                        <button class="btn btn-primary">Purchase</button>
+                        <button class="btn btn-primary">Acheter</button>
                     </div>
                 </div>
 
@@ -144,9 +137,9 @@
                     </div>
                     <div class="item-info">
                         <h3>Manga Master Badge</h3>
-                        <p>Display your manga reading achievements</p>
+                        <p>Affichez vos réussites en lecture de mangas</p>
                         <div class="item-price">300 Points</div>
-                        <button class="btn btn-primary">Purchase</button>
+                        <button class="btn btn-primary">Acheter</button>
                     </div>
                 </div>
             </div>
@@ -163,49 +156,49 @@
         <section class="premium-membership">
             <div class="premium-card">
                 <div class="premium-header">
-                    <h2>Premium Membership</h2>
-                    <div class="premium-badge">Best Value</div>
+                    <h2>Adhésion Premium</h2>
+                    <div class="premium-badge">Meilleur vente</div>
                 </div>
                 <div class="premium-price">
-                    <span class="price">$4.99</span>
-                    <span class="period">/ month</span>
+                    <span class="price">€4.99</span>
+                    <span class="period">/ mois</span>
                 </div>
                 <ul class="premium-features">
-                    <li><i class="fas fa-check"></i> Unlimited profile customization</li>
-                    <li><i class="fas fa-check"></i> Display up to 100 anime on your profile</li>
-                    <li><i class="fas fa-check"></i> Access to all premium avatars and banners</li>
-                    <li><i class="fas fa-check"></i> Ad-free experience</li>
-                    <li><i class="fas fa-check"></i> Early access to new features</li>
-                    <li><i class="fas fa-check"></i> 500 bonus points monthly</li>
+                    <li><i class="fas fa-check"></i>Personnalisation illimitée du profil</li>
+                    <li><i class="fas fa-check"></i> Affichez jusqu'à 100 animes sur votre profil</li>
+                    <li><i class="fas fa-check"></i> Accès à tous les avatars et bannières premium</li>
+                    <li><i class="fas fa-check"></i> Expérience sans publicité</li>
+                    <li><i class="fas fa-check"></i> Accès anticipé aux nouvelles fonctionnalités</li>
+                    <li><i class="fas fa-check"></i> 700 points bonus mensuels</li>
                 </ul>
-                <button class="btn btn-primary btn-large">Subscribe Now</button>
+                <button class="btn btn-primary btn-large">Souscrivez maintenant</button>
             </div>
         </section>
 
         <section class="points-packages">
-            <h2 class="section-title">Get More Points</h2>
+            <h2 class="section-title">Avoir plus de points</h2>
             <div class="points-cards">
                 <div class="points-card">
                     <div class="points-amount">500</div>
-                    <div class="points-price">$4.99</div>
-                    <button class="btn btn-secondary">Purchase</button>
+                    <div class="points-price">€4.99</div>
+                    <button class="btn btn-secondary">Acheter</button>
                 </div>
                 <div class="points-card">
                     <div class="points-amount">1000</div>
-                    <div class="points-price">$9.99</div>
-                    <button class="btn btn-secondary">Purchase</button>
+                    <div class="points-price">€9.99</div>
+                    <button class="btn btn-secondary">Acheter</button>
                 </div>
                 <div class="points-card">
                     <div class="points-amount">2500</div>
-                    <div class="points-price">$19.99</div>
+                    <div class="points-price">€19.99</div>
                     <div class="points-bonus">+500 Bonus</div>
-                    <button class="btn btn-secondary">Purchase</button>
+                    <button class="btn btn-secondary">Acheter</button>
                 </div>
                 <div class="points-card">
                     <div class="points-amount">5000</div>
-                    <div class="points-price">$39.99</div>
+                    <div class="points-price">€39.99</div>
                     <div class="points-bonus">+1500 Bonus</div>
-                    <button class="btn btn-secondary">Purchase</button>
+                    <button class="btn btn-secondary">Acheter</button>
                 </div>
             </div>
         </section>
@@ -215,25 +208,25 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <h2>Ani<span>Community</span></h2>
-                <p>Your ultimate anime community platform</p>
+                <p>Votre plateforme communautaire d'anime ultime</p>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
                     <h3>Navigation</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="anime-list.html">My List</a></li>
-                        <li><a href="rankings.html">Rankings</a></li>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="anime-list.html">Ma Liste</a></li>
+                        <li><a href="rankings.html">Classement</a></li>
                         <li><a href="profile.html">Profile</a></li>
-                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="shop.html">Boutique</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Legal</h3>
+                    <h3>Légale</h3>
                     <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Condition d'utilisation</a></li>
+                        <li><a href="#">Politique vie privée</a></li>
+                        <li><a href="#">Politique d'utilisation des cookies</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
