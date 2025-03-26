@@ -24,18 +24,24 @@
 </header>
 
 <main>
-    <section class="hero">
-        <div class="hero-content">
+    <section class="hero" style="position: relative; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%); z-index: 1; height: 500px;">
+        <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-80%, -30%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
             <h1>Votre voyage anime commence ici</h1>
             <p>Rejoignez la communauté ultime des passionnés d'anime, de manga, de manhwa et de light novel</p>
             <a href="signup.html" class="btn btn-primary btn-large">Rejoignez maintenant</a>
         </div>
-        <div class="hero-image">
-            <img src="images/hero-image.png" alt="Collage de personnages d'anime">
+        <div class="hero-image" style="position: absolute; bottom: -300px; z-index: 1; left: 1200px;
+@media (max-width: 1200px) { left: 900px; }
+@media (max-width: 1440px) { left: 1100px; }">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8320e647-808a-4f99-9e38-e2a11ae2dbf0/dexfn2w-8a8ba5c8-3cc8-4432-b6ec-16a33c236e7b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzgzMjBlNjQ3LTgwOGEtNGY5OS05ZTM4LWUyYTExYWUyZGJmMFwvZGV4Zm4ydy04YThiYTVjOC0zY2M4LTQ0MzItYjZlYy0xNmEzM2MyMzZlN2IucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6tFrs7Dg-juh70Pyo8nhT8acpIIxEr-tc-CbVE7uX70" alt="Anime Acceuil" style="max-width: none; width: 450px; height: auto;">
         </div>
     </section>
 
-    <section class="features">
+
+
+
+
+    <section class="features" style="position: relative; z-index: 2; background: white; padding-top: 150px; overflow: hidden;">
         <h2 class="section-title">Pourquoi rejoindre AniCommunity</h2>
         <div class="feature-cards">
             <div class="feature-card">
@@ -69,23 +75,36 @@
         </div>
     </section>
 
+
+
+
     <section class="trending">
         <h2 class="section-title">Tendances actuelles</h2>
         <div class="anime-grid">
             <div class="anime-card">
                 <div class="anime-image">
-                    <img src="images/anime1.png" alt="Titre de l'anime">
-                    <div class="rating">4.9</div>
+                    <img src="https://i.etsystatic.com/37268737/r/il/68e56f/5739564279/il_fullxfull.5739564279_42bi.jpg" alt="Titre de l'anime">
+                    <div class="rating">5.0</div>
                 </div>
                 <div class="anime-info">
-                    <h3>Demon Slayer</h3>
-                    <p>Action, Fantaisie</p>
+                    <h3>Solo Leveling</h3>
+                    <p>Action, Combat</p>
                 </div>
             </div>
             <div class="anime-card">
                 <div class="anime-image">
-                    <img src="images/anime2.png" alt="Titre de l'anime">
-                    <div class="rating">4.8</div>
+                    <img src="https://static.posters.cz/image/1300/affiches-et-posters/naruto-shippuden-group-i129089.jpg" alt="Titre de l'anime">
+                    <div class="rating">4.9</div>
+                </div>
+                <div class="anime-info">
+                    <h3>Naruto</h3>
+                    <p>Action, Combat</p>
+                </div>
+            </div>
+            <div class="anime-card">
+                <div class="anime-image">
+                    <img src="https://m.media-amazon.com/images/I/71Nel1871TL._AC_UF1000,1000_QL80_.jpg" alt="Titre de l'anime">
+                    <div class="rating">4.6</div>
                 </div>
                 <div class="anime-info">
                     <h3>Jujutsu Kaisen</h3>
@@ -94,8 +113,8 @@
             </div>
             <div class="anime-card">
                 <div class="anime-image">
-                    <img src="images/anime3.png" alt="Titre de l'anime">
-                    <div class="rating">4.7</div>
+                    <img src="https://m.media-amazon.com/images/I/51K4w8DY5cL.jpg" alt="Titre de l'anime">
+                    <div class="rating">4.5</div>
                 </div>
                 <div class="anime-info">
                     <h3>Attack on Titan</h3>
@@ -104,12 +123,32 @@
             </div>
             <div class="anime-card">
                 <div class="anime-image">
-                    <img src="images/anime4.png" alt="Titre de l'anime">
-                    <div class="rating">4.6</div>
+                    <img src="https://www.yourdecoration.fr/cdn/shop/files/gbeye-fp4632-my-hero-academia-group-affiche-61x91-5cm.jpg?v=1727850975" alt="Titre de l'anime">
+                    <div class="rating">4.2</div>
                 </div>
                 <div class="anime-info">
                     <h3>My Hero Academia</h3>
                     <p>Action, Super-héros</p>
+                </div>
+            </div>
+            <div class="anime-card">
+                <div class="anime-image">
+                    <img src="https://m.media-amazon.com/images/I/71y0SGQsYLL._AC_SL1272_.jpg" alt="Titre de l'anime">
+                    <div class="rating">3.7</div>
+                </div>
+                <div class="anime-info">
+                    <h3>Demon Slayer</h3>
+                    <p>Action, Fantaisie</p>
+                </div>
+            </div>
+            <div class="anime-card">
+                <div class="anime-image">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/91/cf/e0/14733201/1507-1/tsp20230822075027/The-Beginning-After-the-End-T01.jpg" alt="Titre de l'anime">
+                    <div class="rating">1.2</div>
+                </div>
+                <div class="anime-info">
+                    <h3>The Begining After The End</h3>
+                    <p>Action, Fantaisie</p>
                 </div>
             </div>
         </div>
@@ -118,18 +157,21 @@
 
     <section class="premium-features">
         <div class="premium-content">
-            <h2>Améliorez votre expérience</h2>
-            <p>Débloquez des fonctionnalités premium pour faire passer votre passion à un niveau supérieur</p>
-            <ul class="premium-list">
-                <li><i class="fas fa-check"></i> Avatars animés</li>
-                <li><i class="fas fa-check"></i> Thèmes de profil personnalisés</li>
-                <li><i class="fas fa-check"></i> Bannières exclusives</li>
-                <li><i class="fas fa-check"></i> Affichage de plus d'animes sur votre profil</li>
-            </ul>
-            <button class="btn btn-primary">Explorer le Premium</button>
-        </div>
-        <div class="premium-image">
-            <img src="images/premium.png" alt="Illustration des fonctionnalités premium">
+        <h2>Améliorez votre expérience</h2>
+        <p>Débloquez des fonctionnalités premium pour faire passer votre passion à un niveau supérieur</p>
+        <ul class="premium-list">
+            <li><i class="fas fa-check"></i> Avatars animés</li>
+            <li><i class="fas fa-check"></i> Thèmes de profil personnalisés</li>
+            <li><i class="fas fa-check"></i> Bannières exclusives</li>
+            <li><i class="fas fa-check"></i> Affichage de plus d'animes sur votre profil</li>
+        </ul>
+            <button class="btn btn-primary" style="background-color: white; color: #5429D0FF; border: 2px solid #5429D0FF; padding: 10px 20px; cursor: pointer; transition: all 0.3s ease;"
+                    onmouseover="this.style.backgroundColor='#5429D0FF'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='#5429D0FF';">
+                Explorer le Premium
+            </button>
+    </div>
+        <div class="premium-image" style="position: relative; top: 64px;">
+            <img src="https://www.pngplay.com/wp-content/uploads/12/Anime-Profile-Pictures-Transparent-Free-PNG.png" alt="Anime Acceuil" width="750" height="750">
         </div>
     </section>
 
@@ -138,27 +180,29 @@
         <div class="testimonial-cards">
             <div class="testimonial-card">
                 <div class="user-avatar">
-                    <img src="images/user1.png" alt="Avatar utilisateur">
+                    <img src="https://i.pinimg.com/736x/d0/c2/08/d0c208ff30a19f9da03ac38a7fea2071.jpg" alt="Avatar utilisateur">
                 </div>
                 <p class="testimonial-text">"AniCommunity a complètement transformé ma façon de suivre et découvrir de nouveaux animes. La communauté est incroyable !"</p>
                 <p class="user-name">- Akira T.</p>
             </div>
             <div class="testimonial-card">
                 <div class="user-avatar">
-                    <img src="images/user2.png" alt="Avatar utilisateur">
+                    <img src="https://img.lovepik.com/element/45006/1281.png_860.png" alt="Avatar utilisateur">
                 </div>
                 <p class="testimonial-text">"J'adore pouvoir personnaliser mon profil pour refléter ma personnalité. Le système de notation est aussi super utile."</p>
                 <p class="user-name">- Mika S.</p>
             </div>
             <div class="testimonial-card">
                 <div class="user-avatar">
-                    <img src="images/user3.png" alt="Avatar utilisateur">
+                    <img src="https://i.pinimg.com/736x/f9/33/43/f9334337328ec9e815d8a78c907fe5c3.jpg" alt="Avatar utilisateur">
                 </div>
                 <p class="testimonial-text">"Trouver des amis avec les mêmes goûts n'a jamais été aussi simple. Cette plateforme est révolutionnaire !"</p>
                 <p class="user-name">- Ryo K.</p>
             </div>
         </div>
     </section>
+
+
 </main>
 
 <footer>
