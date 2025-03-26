@@ -1,0 +1,3 @@
+# Exclure tous les dossiers .idea dans le projet
+.idea/
+.idea/*
