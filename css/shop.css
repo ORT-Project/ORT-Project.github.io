@@ -1,0 +1,224 @@
+/* Shop Page Styles */
+.shop-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #6a3de8 0%, #5429d0 100%);
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.shop-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.shop-categories {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.shop-items {
+  padding: 0 2rem 4rem;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.shop-item {
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.shop-item:hover {
+  transform: translateY(-5px);
+}
+
+.item-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.item-tag.limited {
+  background-color: var(--warning-color);
+}
+
+.item-tag.exclusive {
+  background-color: var(--primary-color);
+}
+
+.item-info {
+  padding: 1.5rem;
+}
+
+.item-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.item-info p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.item-price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.premium-membership {
+  padding: 0 2rem 4rem;
+}
+
+.premium-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background-color: var(--primary-light);
+  opacity: 0.1;
+  border-radius: 0 0 0 100%;
+}
+
+.premium-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.premium-badge {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.premium-price {
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.period {
+  color: var(--text-light);
+}
+
+.premium-features {
+  margin-bottom: 2rem;
+}
+
+.premium-features li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.premium-features li i {
+  color: var(--success-color);
+  margin-right: 1rem;
+}
+
+.points-packages {
+  padding: 4rem 2rem;
+  background-color: var(--background-alt);
+}
+
+.points-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.points-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+}
+
+.points-card:hover {
+  transform: translateY(-5px);
+}
+
+.points-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.points-price {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.points-bonus {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+

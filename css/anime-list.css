@@ -1,0 +1,259 @@
+/* Anime List Page Styles */
+.list-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.list-header h1 {
+  font-size: 2.5rem;
+}
+
+.list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input {
+  padding: 0.6rem 1rem;
+  padding-right: 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: 250px;
+}
+
+.search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.filter-container select {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: white;
+}
+
+.list-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-right: 1rem;
+}
+
+.stat-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  color: var(--primary-color);
+}
+
+.anime-list {
+  padding: 0 2rem 4rem;
+}
+
+.list-table {
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+.list-header-row {
+  display: grid;
+  grid-template-columns: 80px 2fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.list-row {
+  display: grid;
+  grid-template-columns: 80px 2fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.list-row:last-child {
+  border-bottom: none;
+}
+
+.list-cell {
+  padding: 0.5rem;
+}
+
+.image-cell img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.title-cell h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.title-cell p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.rating-input select {
+  padding: 0.3rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.episode-input {
+  width: 40px;
+  padding: 0.3rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-badge.completed {
+  background-color: #e6f7e6;
+  color: #2e7d32;
+}
+
+.status-badge.watching {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-badge.plan {
+  background-color: #fff8e1;
+  color: #ff8f00;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.import-export {
+  padding: 4rem 2rem;
+  background-color: var(--background-alt);
+}
+
+.import-export-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.option-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.option-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.option-card h3 {
+  margin-bottom: 0.8rem;
+}
+
+.option-card p {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .list-header-row,
+  .list-row {
+    grid-template-columns: 80px 2fr 1fr 1fr 1fr;
+  }
+
+  .type-cell,
+  .actions-cell {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .list-actions {
+    width: 100%;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+
+  .list-header-row,
+  .list-row {
+    grid-template-columns: 80px 2fr 1fr;
+  }
+
+  .score-cell,
+  .progress-cell,
+  .type-cell,
+  .actions-cell {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
