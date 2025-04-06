@@ -17,7 +17,7 @@
 .auth-image {
   flex: 1;
   position: relative;
-  background: linear-gradient(135deg, #6a3de8 0%, #5429d0 100%);
+  background: linear-gradient(135deg, #6a3de8 10%, #5429d0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
